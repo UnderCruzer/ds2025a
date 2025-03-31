@@ -19,8 +19,17 @@ class LinkedList:
         while current.link:
             current = current.link
         current.link = Node(data)
-
+    def __str__(self):
+        #return "Linked list"
+        current = self.head
+        result = ""
+        while current is not None:
+            #print(current.data)
+            result = result + str(current.data) + "->"
+            current = current.link
+        return result + "end"
 ll = LinkedList() # 링크드리스트 객체 생성, 헤드의 none값 만듬, self.head가 false이지만 if문에의해 true,
 ll.append(8)
 ll.append(10)
 ll.append(-9)
+print(ll)
