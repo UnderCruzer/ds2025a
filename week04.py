@@ -1,5 +1,4 @@
-from wsgiref.util import application_uri
-
+import random
 
 class Node:
     def __init__(self, data, link=None):
@@ -41,10 +40,18 @@ class LinkedList:
             current = current.link
         return result + "end"
 
-ll = LinkedList() # 링크드리스트 객체 생성, 헤드의 none값 만듬, self.head가 false이지만 if문에의해 true,
-ll.append(8)
-ll.append(10)
-ll.append(-9)
-print(ll)
-print(ll.search(99))
+ll = LinkedList()
+for _ in range(10):
+    ll.append(random.randint(1,20))
+    print(ll)
 print(ll.search(10))
+
+
+
+#ll = LinkedList() # 링크드리스트 객체 생성, 헤드의 none값 만듬, self.head가 false이지만 if문에의해 true,
+#ll.append(8)
+#ll.append(10)
+#ll.append(-9)
+#print(ll)
+#print(ll.search(99))
+#print(ll.search(10))
