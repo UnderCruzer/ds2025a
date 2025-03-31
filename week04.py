@@ -25,7 +25,8 @@ class LinkedList:
         result = ""
         while current is not None:
             #print(current.data)
-            result = result + str(current.data) + "->"
+            #result = result + str(current.data) + "->"
+            result = result + f"{current.data} ->"
             current = current.link
         return result + "end"
 ll = LinkedList() # 링크드리스트 객체 생성, 헤드의 none값 만듬, self.head가 false이지만 if문에의해 true,
