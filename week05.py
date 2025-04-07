@@ -1,18 +1,21 @@
 # print(1+2))
-def is_valid_parentheses(expression : str) -> bool:
-    # str 매개변수 데이터 타입 . bool 리턴 타입
-    stack = list()
+
+
+def is_valid_brackets(expression : str) -> bool:  # type hint
+    stack = []
+    brackets = {')':'(', '}':'{', ']':'[' }
     for letter in expression:
-        if letter == "(":
+        if letter in brackets.values():     # 여는 괄호일 때 해당 기호를 스택에 집어넣는다
             stack.append(letter)
-        if letter == ")":
-            if len(stack) == 0:
+        if letter in brackets.keys():       # 닫는 괄호일 때
+            if not stack or stack.pop() != brackets[letter]:
                 return False
-            else:
-                stack.pop()
-    return len(stack) == 0
-# 여는 괄호가 더 많을 때 False
-print(is_valid_parentheses(")1+2())"))
-print(is_valid_parentheses("(1+2))"))
-print(is_valid_parentheses("(1+2)"))
-print(is_valid_parentheses("((1+2)/2)"))
+
+    return not stack
+
+print(is_valid_brackets("([2+3])"))
+print(is_valid_brackets("(2+{3*9})"))
+print(is_valid_brackets(")1+2())"))
+print(is_valid_brackets("(1+2))"))
+print(is_valid_brackets("(1+2)"))
+print(is_valid_brackets("((1+2)/2)"))
