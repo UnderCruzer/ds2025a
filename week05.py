@@ -37,17 +37,14 @@ class Stack:
         return len(self.items) == 0
 
     def peek(self):
-        return self.items[-1]
-        if self.top is None:
-            return "Stack is empty!"
-        popped_node = self.top
-        self.top = self.top.link
-        return popped_node.data
+        return self.top.data
 
 
 s1 = Stack()
-s2 = Stack()
+#s2 = Stack()
+
 s1.push("Data structure")
 s1.push("Database")
-print(s1.pop())
-print(s1.pop())
+s1.pop()
+print(s1.peek())
+#print(s1.pop())
