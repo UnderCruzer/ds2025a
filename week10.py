@@ -11,8 +11,8 @@ def post_order(node):
         post_order(node.right)
         print(node.data, end='->')
 
-def search():
-    find_number = int(input("찾는 수는? "))
+def search(find_number):
+
     current = root
     while True:
       if find_number == current.data:
@@ -28,7 +28,6 @@ def search():
               print(f"{find_number}이(가) 존재하지 않습니다")
               break
           current = current.right
-
 
 def insert(root, value):
     node = TreeNode()
@@ -63,7 +62,8 @@ if __name__ == "__main__":
 
     post_order(root)
     print()
-    search()
+    find_number = int(input("찾는 수는? "))
+    search(find_number)
 
 
 
